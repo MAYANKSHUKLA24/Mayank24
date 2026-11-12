@@ -10,7 +10,13 @@ export default function BrandTicker() {
         {sequence.map((brand, i) => (
           <div key={`${brand.name}-${i}`} className="flex items-center gap-10 shrink-0">
             <div className="h-7 flex items-center opacity-90 [filter:grayscale(1)_brightness(0)_invert(1)]">
-              <BrandLogo name={brand.name} domain={brand.domain} theme="dark" imgClassName="h-7" />
+              <BrandLogo
+                name={brand.name}
+                domain={brand.domain}
+                localSrc={brand.localLogo}
+                theme="dark"
+                imgClassName="h-7"
+              />
             </div>
             <span className="text-royal-soft/60 text-sm" aria-hidden>
               →

@@ -28,6 +28,7 @@ export type Project = {
   employer: string;
   description: string;
   brandfetchDomain?: string;
+  localLogo?: string;
   status: "case-study" | "placeholder";
   metrics?: ProjectMetric[];
   sections?: CaseStudySection[];
@@ -120,6 +121,7 @@ export const projects: Project[] = [
     description:
       "Daily partner marketing operations across 10 Smart TV OEMs, co-marketing for major title launches, and Talent Byte scripting for title and brand promotions.",
     brandfetchDomain: "primevideo.com",
+    localLogo: "/logos/amazon-prime-video.svg",
     status: "case-study",
     metrics: [
       { value: "10", label: "Smart TV OEM partnerships managed" },
@@ -203,6 +205,7 @@ export const projects: Project[] = [
     description:
       "End-to-end social media execution and a 360-degree activation around the Def Leppard concert.",
     brandfetchDomain: "jackdaniels.com",
+    localLogo: "/logos/jack-daniels.png",
     status: "case-study",
     sections: [
       {
@@ -272,6 +275,7 @@ export const projects: Project[] = [
     description:
       "End-to-end social media execution and integrated ATL/BTL campaigns for RuPay (NPCI).",
     brandfetchDomain: "rupay.co.in",
+    localLogo: "/logos/rupay.svg",
     status: "case-study",
     sections: [
       {
@@ -345,6 +349,7 @@ export const projects: Project[] = [
     description:
       "Conceptualised and delivered SI and A+ e-commerce listings, boosting product visibility and brand storytelling.",
     brandfetchDomain: "lakmeindia.com",
+    localLogo: "/logos/lakme.svg",
     status: "placeholder",
   },
   {
@@ -356,6 +361,7 @@ export const projects: Project[] = [
     role: "Associate Manager, Client Servicing, White Digital Canvas",
     employer: "White Digital Canvas",
     description: "A high-impact brand campaign delivered as primary client liaison.",
+    brandfetchDomain: "rajgrp.com",
     status: "placeholder",
     instagramEmbeds: ["https://www.instagram.com/reel/Cj2Gx-mIrut/"],
   },
@@ -420,6 +426,7 @@ export const projects: Project[] = [
     employer: "Creativeland Asia",
     description: "Case study in development.",
     brandfetchDomain: "tacobell.com",
+    localLogo: "/logos/taco-bell.svg",
     status: "placeholder",
   },
   {
@@ -432,6 +439,7 @@ export const projects: Project[] = [
     employer: "Creativeland Asia",
     description: "Case study in development.",
     brandfetchDomain: "kotak.com",
+    localLogo: "/logos/kotak.svg",
     status: "placeholder",
   },
   {

@@ -35,6 +35,7 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
               <BrandLogo
                 name={project.client}
                 domain={project.brandfetchDomain}
+                localSrc={project.localLogo}
                 theme="light"
                 imgClassName="max-h-14 max-w-full"
                 className="font-semibold text-lg text-center text-black/80"

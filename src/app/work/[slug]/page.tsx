@@ -59,11 +59,12 @@ export default async function CaseStudyPage({
           </Reveal>
 
           <div className="flex flex-wrap items-center gap-4 mb-6">
-            {project.brandfetchDomain && (
+            {(project.brandfetchDomain || project.localLogo) && (
               <div className="h-14 rounded-lg bg-white px-4 flex items-center">
                 <BrandLogo
                   name={project.client}
                   domain={project.brandfetchDomain}
+                  localSrc={project.localLogo}
                   theme="light"
                   imgClassName="h-9"
                 />
