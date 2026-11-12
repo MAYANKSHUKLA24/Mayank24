@@ -220,12 +220,12 @@ function VisualArchive({ project }: { project: (typeof projects)[number] }) {
         {hasReal ? (
           <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
             {project.driveVideoIds?.map((id) => (
-              <div key={id} className="w-[80vw] sm:w-[42vw] lg:w-[30vw] shrink-0">
+              <div key={id} className="w-[75vw] sm:w-[38vw] lg:w-[27vw] shrink-0">
                 <DriveVideo fileId={id} title={project.client} />
               </div>
             ))}
             {project.instagramEmbeds?.map((url) => (
-              <div key={url} className="w-[80vw] sm:w-[36vw] lg:w-[26vw] shrink-0">
+              <div key={url} className="w-[75vw] sm:w-[38vw] lg:w-[27vw] shrink-0">
                 <InstagramEmbed url={url} />
               </div>
             ))}
@@ -235,7 +235,7 @@ function VisualArchive({ project }: { project: (typeof projects)[number] }) {
             {[0, 1, 2].map((i) => (
               <div
                 key={i}
-                className="aspect-[4/3] w-[70vw] sm:w-[36vw] lg:w-[26vw] shrink-0 rounded-xl bg-charcoal flex items-center justify-center"
+                className="aspect-[9/16] w-[75vw] sm:w-[38vw] lg:w-[27vw] shrink-0 rounded-xl bg-charcoal flex items-center justify-center"
               >
                 <span className="text-off-white/20 text-xs tracking-[0.18em] uppercase">
                   Image Pending
