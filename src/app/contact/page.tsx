@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
-import MagneticButton from "@/components/MagneticButton";
+import SectionHeader from "@/components/SectionHeader";
+import PillCta from "@/components/PillCta";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -14,32 +15,26 @@ export default function ContactPage() {
   return (
     <>
       <Navigation />
-      <main className="bg-off-white pt-40 pb-24 px-5 sm:px-8 lg:px-12">
-        <Reveal>
-          <p className="text-eyebrow text-xs text-royal mb-4">Let&rsquo;s Talk</p>
-          <h1 className="text-display text-[13vw] sm:text-[8vw] lg:text-[6vw] leading-[0.92] max-w-4xl">
+      <main className="bg-off-white pt-32 pb-24 px-5 sm:px-8 lg:px-12">
+        <SectionHeader index="00" title="Let's Talk" className="mb-8" />
+        <Reveal delay={0.1}>
+          <h1 className="text-display text-[11vw] sm:text-[7vw] lg:text-[5vw] leading-[0.92] max-w-4xl">
             Tell me about the brand. I&rsquo;ll bring the idea.
           </h1>
         </Reveal>
 
-        <Reveal delay={0.15}>
-          <div className="mt-16 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
-            <MagneticButton
-              href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-royal px-7 py-4 text-sm tracking-[0.1em] uppercase text-off-white hover:bg-royal-soft transition-colors"
-            >
+        <Reveal delay={0.2}>
+          <div className="mt-14 flex flex-wrap items-center gap-4">
+            <PillCta href={`mailto:${site.email}`} variant="royal">
               {site.email}
-            </MagneticButton>
-            <MagneticButton
-              href={site.linkedin}
-              className="inline-flex items-center gap-2 rounded-full border border-black/15 px-7 py-4 text-sm tracking-[0.1em] uppercase hover:border-royal hover:text-royal transition-colors"
-            >
-              LinkedIn ↗
-            </MagneticButton>
+            </PillCta>
+            <PillCta href={site.linkedin} variant="outline">
+              LinkedIn
+            </PillCta>
           </div>
         </Reveal>
 
-        <Reveal delay={0.25}>
+        <Reveal delay={0.3}>
           <p className="mt-10 text-sm text-black/40">{site.phone}</p>
         </Reveal>
       </main>

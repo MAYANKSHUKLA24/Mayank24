@@ -38,7 +38,7 @@ export default function Navigation() {
       >
         <Link
           href="/"
-          className="font-serif text-lg tracking-tight whitespace-nowrap pr-4"
+          className="font-bold text-sm tracking-tight uppercase whitespace-nowrap pr-4"
         >
           Mayank Shukla
         </Link>

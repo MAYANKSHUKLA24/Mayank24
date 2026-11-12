@@ -18,9 +18,9 @@ export default function BrandLogo({
   className = "",
   imgClassName = "",
 }: BrandLogoProps) {
-  const [failed, setFailed] = useState(!domain);
+  const [stage, setStage] = useState<"primary" | "fallback" | "failed">("primary");
 
-  if (failed || !domain) {
+  if (!domain || stage === "failed") {
     return (
       <span
         className={`font-sans text-sm tracking-[0.18em] uppercase whitespace-nowrap ${className}`}
@@ -30,13 +30,16 @@ export default function BrandLogo({
     );
   }
 
+  const activeTheme = stage === "primary" ? theme : theme === "light" ? "dark" : "light";
+
   return (
     <img
-      src={buildLogoUrl(domain, { type: "logo", theme, width: 320 })}
+      key={activeTheme}
+      src={buildLogoUrl(domain, { type: "logo", theme: activeTheme, width: 320 })}
       alt={name}
       className={`h-full w-auto object-contain ${imgClassName}`}
       loading="lazy"
-      onError={() => setFailed(true)}
+      onError={() => setStage((s) => (s === "primary" ? "fallback" : "failed"))}
     />
   );
 }

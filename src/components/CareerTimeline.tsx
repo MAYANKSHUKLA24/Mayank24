@@ -1,13 +1,14 @@
 import { careerTimeline } from "@/data/career";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
-export default function CareerTimeline() {
+export default function CareerTimeline({ index = "06" }: { index?: string }) {
   return (
-    <section className="dark-section px-5 py-28 sm:px-8 lg:px-12">
+    <section className="dark-section px-5 py-24 sm:px-8 lg:px-12">
+      <SectionHeader index={index} title="Career" dark className="mb-6" />
       <Reveal>
-        <p className="text-eyebrow text-xs text-royal-soft mb-4">Career</p>
-        <h2 className="text-display text-[10vw] sm:text-[6vw] lg:text-[4.4vw] leading-[0.95] text-off-white max-w-3xl mb-16">
-          Six years, one throughline: brands and culture.
+        <h2 className="text-display text-[9vw] sm:text-[5vw] lg:text-[3.4vw] leading-[0.95] text-off-white max-w-3xl mb-16">
+          Five years, one throughline: brands and culture.
         </h2>
       </Reveal>
 

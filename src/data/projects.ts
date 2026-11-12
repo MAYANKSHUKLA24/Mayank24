@@ -33,6 +33,8 @@ export type Project = {
   sections?: CaseStudySection[];
   talent?: string[];
   partners?: string[];
+  instagramEmbeds?: string[];
+  driveVideoIds?: string[];
 };
 
 export const projects: Project[] = [
@@ -156,7 +158,7 @@ export const projects: Project[] = [
       {
         heading: "06. Talent / Partners",
         body: [
-          "Talent Byte campaigns produced for title launches including Teri Baaton Mein Aisa Uljha Jiya (Shahid Kapoor solo cut), Call Me Bae, Madgaon Express, Paatal Lok and The Broken News: Maujaan Hai. See the Talent library for individual bytes.",
+          "Talent Byte campaigns produced for title launches including Teri Baaton Mein Aisa Uljha Jiya (Shahid Kapoor solo cut), Call Me Bae, Madgaon Express, Paatal Lok and Ae Watan Mere Watan. See the Talent library for individual bytes.",
         ],
       },
       {
@@ -177,9 +179,16 @@ export const projects: Project[] = [
       "call-me-bae",
       "madgaon-express",
       "paatal-lok",
-      "the-broken-news-maujaan-hai",
+      "ae-watan-mere-watan",
     ],
     partners: ["Sony", "Samsung", "LG", "Xiaomi", "Google TV"],
+    driveVideoIds: [
+      "1D72UJkyCmEU18EmZt-EXephekM6M3eEI",
+      "1zp2zzamGuz-MPRJU5P24Gsn9ePvIWd9z",
+      "1PN2fd9afNuPKOPtMdx5zWhXm18s-tb1Y",
+      "1SDupZrGvGMQRV-wtAxBYErDjrrOnATfP",
+      "12LKX5kNXiGKxbmKaRTL6Ms1tQe8Ko_39",
+    ],
   },
   {
     slug: "jack-daniels",
@@ -238,6 +247,13 @@ export const projects: Project[] = [
         body: ["Full campaign results in progress."],
       },
     ],
+    instagramEmbeds: [
+      "https://www.instagram.com/p/DZhBy3KyiQv/",
+      "https://www.instagram.com/p/DZeVqibs1nT/",
+      "https://www.instagram.com/p/DZmLeilSjZZ/",
+      "https://www.instagram.com/p/DaXCaq-suZ9/",
+      "https://www.instagram.com/p/Daw34S4OiW1/",
+    ],
   },
   {
     slug: "rupay",
@@ -274,6 +290,11 @@ export const projects: Project[] = [
         heading: "08. Results",
         body: ["Full campaign results in progress."],
       },
+    ],
+    instagramEmbeds: [
+      "https://www.instagram.com/p/DaPat1UjvzD/",
+      "https://www.instagram.com/p/DZ1aguKIfox/",
+      "https://www.instagram.com/p/DaSp0VpskO6/",
     ],
   },
   {
@@ -330,6 +351,7 @@ export const projects: Project[] = [
     employer: "White Digital Canvas",
     description: "A high-impact brand campaign delivered as primary client liaison.",
     status: "placeholder",
+    instagramEmbeds: ["https://www.instagram.com/reel/Cj2Gx-mIrut/"],
   },
   {
     slug: "zoomol",
@@ -377,6 +399,10 @@ export const projects: Project[] = [
     description: "Case study in development.",
     brandfetchDomain: "sanathan.com",
     status: "placeholder",
+    instagramEmbeds: [
+      "https://www.instagram.com/p/DJJMptnuoxg/",
+      "https://www.instagram.com/p/DI3Gp4uyHaT/",
+    ],
   },
   {
     slug: "taco-bell",

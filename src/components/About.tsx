@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import AbstractArt from "./AbstractArt";
+import SectionHeader from "./SectionHeader";
 
 const domains = [
   "OTT",
@@ -15,9 +16,10 @@ const domains = [
   "Content Marketing",
 ];
 
-export default function About() {
+export default function About({ index = "06" }: { index?: string }) {
   return (
-    <section className="bg-off-white px-5 py-28 sm:px-8 lg:px-12">
+    <section className="bg-off-white px-5 py-24 sm:px-8 lg:px-12">
+      <SectionHeader index={index} title="About" className="mb-10" />
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Reveal>
@@ -26,7 +28,7 @@ export default function About() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <AbstractArt variant="rings" className="mt-12 w-40 text-black/40 hidden lg:block" />
+            <AbstractArt variant="rings" className="mt-12 w-36 text-royal/30 hidden lg:block" />
           </Reveal>
         </div>
         <div className="lg:col-span-7">

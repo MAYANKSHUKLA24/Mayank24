@@ -1,27 +1,27 @@
 import { site, currentRoleCapabilityTags } from "@/data/site";
 import Reveal from "./Reveal";
-import AbstractArt from "./AbstractArt";
+import SectionHeader from "./SectionHeader";
 
 export default function CurrentRole() {
   return (
-    <section className="charcoal-section px-5 py-28 sm:px-8 lg:px-12">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+    <section className="charcoal-section px-5 py-24 sm:px-8 lg:px-12">
+      <SectionHeader index="00" title="Currently" dark className="mb-10" />
+
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Reveal>
-            <p className="text-eyebrow text-xs text-royal-soft mb-4">Currently</p>
-            <p className="font-serif text-2xl italic text-off-white/90">{site.company}</p>
-            <AbstractArt variant="waveform" className="mt-10 w-full max-w-[220px] text-off-white/40 hidden lg:block" />
+            <p className="font-semibold text-2xl text-off-white/90">{site.company}</p>
           </Reveal>
         </div>
 
         <div className="lg:col-span-8">
           <Reveal delay={0.1}>
-            <h2 className="text-display text-[9vw] sm:text-[5.5vw] lg:text-[4vw] text-off-white leading-[0.95]">
+            <h2 className="text-display text-[8vw] sm:text-[5vw] lg:text-[3.6vw] text-off-white leading-[0.95] normal-case tracking-tight">
               {site.role}
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-6 max-w-xl text-lg font-light text-off-white/70">
+            <p className="mt-6 max-w-xl text-base sm:text-lg font-light text-off-white/60">
               Building partnerships between culture-defining brands and Rolling
               Stone India&rsquo;s audience.
             </p>

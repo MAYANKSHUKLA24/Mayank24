@@ -13,7 +13,7 @@ export default function ExperiencesPage() {
     <>
       <Navigation />
       <main className="pt-16">
-        <ExperienceTimeline />
+        <ExperienceTimeline index="00" />
       </main>
       <Footer />
     </>

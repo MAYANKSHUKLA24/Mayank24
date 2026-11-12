@@ -2,25 +2,27 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 export default function FeaturedWork() {
   const featured = projects.filter((p) => p.status === "case-study").slice(0, 4);
 
   return (
-    <section id="work" className="bg-off-white px-5 py-28 sm:px-8 lg:px-12">
-      <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
-        <Reveal>
-          <p className="text-eyebrow text-xs text-royal mb-4">Selected Work</p>
-          <h2 className="text-display text-[10vw] sm:text-[6vw] lg:text-[4.4vw] leading-[0.95] max-w-3xl">
+    <section id="work" className="bg-off-white px-5 py-24 sm:px-8 lg:px-12">
+      <SectionHeader index="02" title="Selected Work" className="mb-6" />
+
+      <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+        <Reveal delay={0.1}>
+          <h2 className="text-display text-[9vw] sm:text-[5vw] lg:text-[3.4vw] leading-[0.95] max-w-3xl">
             Partnerships built to be talked about.
           </h2>
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.15}>
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 text-xs tracking-[0.16em] uppercase text-royal hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-xs tracking-[0.1em] text-royal hover:gap-3 transition-all"
           >
-            View Work Index <span aria-hidden>↗</span>
+            View full index <span aria-hidden>↗</span>
           </Link>
         </Reveal>
       </div>

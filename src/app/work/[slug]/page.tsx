@@ -5,6 +5,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import BrandLogo from "@/components/BrandLogo";
+import PillCta from "@/components/PillCta";
+import InstagramEmbed from "@/components/InstagramEmbed";
+import DriveVideo from "@/components/DriveVideo";
 import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -43,19 +46,24 @@ export default async function CaseStudyPage({
           <Reveal>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-off-white/50 hover:text-off-white mb-10"
+              className="inline-flex items-center gap-3 group mb-10"
             >
-              ← Work Index
+              <span className="circle-btn h-9 w-9 border border-off-white/25 text-off-white group-hover:bg-off-white group-hover:text-black">
+                ←
+              </span>
+              <span className="text-[11px] tracking-[0.16em] uppercase text-off-white/50 group-hover:text-off-white">
+                Work Index
+              </span>
             </Link>
           </Reveal>
 
           <div className="flex flex-wrap items-center gap-4 mb-6">
             {project.brandfetchDomain && (
-              <div className="h-9 opacity-90">
+              <div className="h-14 rounded-lg bg-white px-4 flex items-center">
                 <BrandLogo
                   name={project.client}
                   domain={project.brandfetchDomain}
-                  theme="dark"
+                  theme="light"
                   imgClassName="h-9"
                 />
               </div>
@@ -97,28 +105,41 @@ export default async function CaseStudyPage({
         </section>
 
         {project.status === "placeholder" || !project.sections ? (
-          <section className="px-5 py-24 sm:px-8 lg:px-12">
-            <Reveal>
-              <div className="max-w-2xl rounded-2xl border border-black/10 bg-charcoal/[0.02] p-10">
-                <p className="text-eyebrow text-xs text-royal mb-3">Case Study In Progress</p>
-                <p className="text-black/60">
-                  Full case study material for {project.client} is being prepared. Verified
-                  project facts: {project.description}
-                </p>
-              </div>
-            </Reveal>
-          </section>
+          <>
+            <section className="px-5 pt-24 sm:px-8 lg:px-12">
+              <Reveal>
+                <div className="max-w-2xl rounded-2xl border border-black/10 p-10">
+                  <p className="text-eyebrow text-xs text-royal mb-3">Case Study In Progress</p>
+                  <p className="text-black/60">
+                    Full case study material for {project.client} is being prepared. Verified
+                    project facts: {project.description}
+                  </p>
+                </div>
+              </Reveal>
+            </section>
+            {((project.instagramEmbeds?.length ?? 0) > 0 || (project.driveVideoIds?.length ?? 0) > 0) && (
+              <VisualArchive project={project} />
+            )}
+          </>
         ) : (
           <>
             {project.metrics && project.metrics.length > 0 && (
-              <section className="px-5 py-20 sm:px-8 lg:px-12 border-b border-black/10">
-                <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
+              <section className="px-5 py-20 sm:px-8 lg:px-12">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   {project.metrics.map((m, i) => (
                     <Reveal key={m.label} delay={i * 0.08}>
-                      <span className="text-display block text-[12vw] sm:text-[5vw] lg:text-[3.6vw] leading-none text-royal">
-                        {m.value}
-                      </span>
-                      <p className="mt-2 text-sm text-black/60">{m.label}</p>
+                      <div
+                        className={`rounded-2xl p-7 h-full min-h-[160px] flex flex-col justify-between ${
+                          i % 2 === 0 ? "bg-charcoal text-off-white" : "bg-off-white border border-black/10 text-black"
+                        }`}
+                      >
+                        <span className="text-display block text-[12vw] sm:text-[4.5vw] lg:text-[2.8vw] leading-none">
+                          {m.value}
+                        </span>
+                        <p className={`mt-2 text-sm ${i % 2 === 0 ? "text-off-white/55" : "text-black/55"}`}>
+                          {m.label}
+                        </p>
+                      </div>
                     </Reveal>
                   ))}
                 </div>
@@ -146,41 +167,63 @@ export default async function CaseStudyPage({
               <section className="px-5 pb-20 sm:px-8 lg:px-12">
                 <div className="mx-auto max-w-3xl">
                   <Reveal>
-                    <Link
-                      href="/talent"
-                      className="inline-flex items-center gap-2 rounded-full border border-black/15 px-6 py-3 text-xs tracking-[0.16em] uppercase hover:border-royal hover:text-royal transition-colors"
-                    >
-                      View Talent Bytes for this project <span aria-hidden>→</span>
-                    </Link>
+                    <PillCta href="/talent" variant="outline">
+                      View Talent Bytes for this project
+                    </PillCta>
                   </Reveal>
                 </div>
               </section>
             )}
 
-            {/* Visual archive placeholder strip */}
-            <section className="px-5 pb-24 sm:px-8 lg:px-12">
-              <div className="mx-auto max-w-5xl">
-                <Reveal>
-                  <p className="text-eyebrow text-xs text-royal mb-6">09. Visual Archive</p>
-                </Reveal>
-                <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
-                  {[0, 1, 2].map((i) => (
-                    <div
-                      key={i}
-                      className="aspect-[4/3] w-[70vw] sm:w-[36vw] lg:w-[26vw] shrink-0 rounded-xl bg-charcoal flex items-center justify-center"
-                    >
-                      <span className="text-off-white/20 text-xs tracking-[0.18em] uppercase">
-                        Image Pending
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+            <VisualArchive project={project} />
           </>
         )}
       </main>
       <Footer />
     </>
+  );
+}
+
+function VisualArchive({ project }: { project: (typeof projects)[number] }) {
+  const hasReal =
+    (project.instagramEmbeds && project.instagramEmbeds.length > 0) ||
+    (project.driveVideoIds && project.driveVideoIds.length > 0);
+
+  return (
+    <section className="px-5 pb-24 pt-16 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-5xl">
+        <Reveal>
+          <p className="text-eyebrow text-xs text-royal mb-6">09. Visual Archive</p>
+        </Reveal>
+
+        {hasReal ? (
+          <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+            {project.driveVideoIds?.map((id) => (
+              <div key={id} className="w-[80vw] sm:w-[42vw] lg:w-[30vw] shrink-0">
+                <DriveVideo fileId={id} title={project.client} />
+              </div>
+            ))}
+            {project.instagramEmbeds?.map((url) => (
+              <div key={url} className="w-[80vw] sm:w-[36vw] lg:w-[26vw] shrink-0">
+                <InstagramEmbed url={url} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="aspect-[4/3] w-[70vw] sm:w-[36vw] lg:w-[26vw] shrink-0 rounded-xl bg-charcoal flex items-center justify-center"
+              >
+                <span className="text-off-white/20 text-xs tracking-[0.18em] uppercase">
+                  Image Pending
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }

@@ -15,9 +15,9 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main className="pt-16">
-        <About />
-        <CareerTimeline />
-        <Capabilities />
+        <About index="00" />
+        <CareerTimeline index="01" />
+        <Capabilities index="02" />
       </main>
       <Footer />
     </>

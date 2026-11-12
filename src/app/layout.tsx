@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -28,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${fraunces.variable} ${inter.variable} h-full`}
+      className={`${montserrat.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-off-white text-black antialiased">
         <div className="grain" aria-hidden="true" />

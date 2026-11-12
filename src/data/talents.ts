@@ -16,6 +16,7 @@ export type Talent = {
   project: string;
   projectSlug: string;
   notes: string;
+  driveFileId: string;
 };
 
 export const talents: Talent[] = [
@@ -29,6 +30,7 @@ export const talents: Talent[] = [
     project: "Amazon Prime Video: Smart TV OEM Partner Marketing",
     projectSlug: "amazon-prime-video",
     notes: "Scripted and coordinated as part of the Schbang Talent Byte workflow for Prime Video.",
+    driveFileId: "1D72UJkyCmEU18EmZt-EXephekM6M3eEI",
   },
   {
     slug: "call-me-bae",
@@ -40,6 +42,7 @@ export const talents: Talent[] = [
     project: "Amazon Prime Video: Smart TV OEM Partner Marketing",
     projectSlug: "amazon-prime-video",
     notes: "Part of the co-marketing push across Sony, Samsung, LG, Xiaomi and Google TV.",
+    driveFileId: "1zp2zzamGuz-MPRJU5P24Gsn9ePvIWd9z",
   },
   {
     slug: "madgaon-express",
@@ -51,6 +54,7 @@ export const talents: Talent[] = [
     project: "Amazon Prime Video: Smart TV OEM Partner Marketing",
     projectSlug: "amazon-prime-video",
     notes: "Part of the co-marketing push across Sony, Samsung, LG, Xiaomi and Google TV.",
+    driveFileId: "1PN2fd9afNuPKOPtMdx5zWhXm18s-tb1Y",
   },
   {
     slug: "paatal-lok",
@@ -62,10 +66,11 @@ export const talents: Talent[] = [
     project: "Amazon Prime Video: Smart TV OEM Partner Marketing",
     projectSlug: "amazon-prime-video",
     notes: "Part of the co-marketing push across Sony, Samsung, LG, Xiaomi and Google TV.",
+    driveFileId: "1SDupZrGvGMQRV-wtAxBYErDjrrOnATfP",
   },
   {
-    slug: "the-broken-news-maujaan-hai",
-    name: "The Broken News: Maujaan Hai",
+    slug: "ae-watan-mere-watan",
+    name: "Ae Watan Mere Watan",
     category: ["ENTERTAINMENT"],
     brandRelevance: "Amazon Prime Video title launch, Smart TV OEM co-marketing",
     format: "Generic attribution, 30 sec",
@@ -73,6 +78,7 @@ export const talents: Talent[] = [
     project: "Amazon Prime Video: Smart TV OEM Partner Marketing",
     projectSlug: "amazon-prime-video",
     notes: "Part of the co-marketing push across Sony, Samsung, LG, Xiaomi and Google TV.",
+    driveFileId: "12LKX5kNXiGKxbmKaRTL6Ms1tQe8Ko_39",
   },
 ];
 

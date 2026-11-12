@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TalentLibrary from "@/components/TalentLibrary";
 import Reveal from "@/components/Reveal";
+import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Talent × Brand | Mayank Shukla",
@@ -14,9 +15,9 @@ export default function TalentPage() {
     <>
       <Navigation />
       <main className="bg-off-white pt-32 pb-24 px-5 sm:px-8 lg:px-12">
-        <Reveal>
-          <p className="text-eyebrow text-xs text-royal mb-4">Talent × Brand</p>
-          <h1 className="text-display text-[12vw] sm:text-[7vw] lg:text-[5vw] leading-[0.95] max-w-4xl">
+        <SectionHeader index="00" title="Talent x Brand" className="mb-8" />
+        <Reveal delay={0.1}>
+          <h1 className="text-display text-[10vw] sm:text-[6vw] lg:text-[4.2vw] leading-[0.95] max-w-4xl">
             Where talent becomes the brand message.
           </h1>
           <p className="mt-6 max-w-xl text-black/60 font-light">
