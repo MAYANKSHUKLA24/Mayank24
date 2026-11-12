@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -81,6 +82,26 @@ export default async function CaseStudyPage({
               {project.description}
             </p>
           </Reveal>
+
+          {project.heroImage && (
+            <Reveal delay={0.25}>
+              <div className="relative mt-10 w-full max-w-sm overflow-hidden rounded-2xl">
+                <Image
+                  src={project.heroImage}
+                  alt={`${project.client} campaign creative`}
+                  width={1080}
+                  height={1440}
+                  className="h-auto w-full"
+                  priority
+                />
+              </div>
+              {project.contentNotice && (
+                <p className="mt-3 max-w-sm text-[11px] leading-relaxed text-off-white/35">
+                  {project.contentNotice}
+                </p>
+              )}
+            </Reveal>
+          )}
 
           <Reveal delay={0.3}>
             <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4 border-t border-off-white/10 pt-8 max-w-3xl">
@@ -222,6 +243,12 @@ function VisualArchive({ project }: { project: (typeof projects)[number] }) {
               </div>
             ))}
           </div>
+        )}
+
+        {project.contentNotice && (
+          <p className="mt-6 max-w-2xl text-[11px] leading-relaxed text-black/35">
+            {project.contentNotice}
+          </p>
         )}
       </div>
     </section>

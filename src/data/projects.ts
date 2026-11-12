@@ -35,6 +35,8 @@ export type Project = {
   partners?: string[];
   instagramEmbeds?: string[];
   driveVideoIds?: string[];
+  heroImage?: string;
+  contentNotice?: string;
 };
 
 export const projects: Project[] = [
@@ -247,13 +249,17 @@ export const projects: Project[] = [
         body: ["Full campaign results in progress."],
       },
     ],
-    instagramEmbeds: [
-      "https://www.instagram.com/p/DZhBy3KyiQv/",
-      "https://www.instagram.com/p/DZeVqibs1nT/",
-      "https://www.instagram.com/p/DZmLeilSjZZ/",
-      "https://www.instagram.com/p/DaXCaq-suZ9/",
-      "https://www.instagram.com/p/Daw34S4OiW1/",
+    heroImage: "/campaigns/jack-daniels-mentally-im-here.png",
+    driveVideoIds: [
+      "1kNoCRf4AGAOrcKcedipElEzAmnjPeHlS",
+      "1a_cYKpIDZFnH7sAcR9NsQUIsphto_o32",
+      "1By90MCrGAy4UiWYBCAETNj47FRgaS-HS",
+      "1CxEABZhvMWFtKhCBZBapiiYEIKhecur7",
+      "1Z8vSRqyHH3c0MpuSHt4KAiaYLCdmmHz8",
+      "1P0KKn9SmVqk7jHGgxVMf1qmchvdFQQi8",
     ],
+    contentNotice:
+      "Please drink responsibly. Jack Daniel's and Tennessee Honey are registered trademarks. Content not intended for anyone under the legal drinking age.",
   },
   {
     slug: "rupay",
