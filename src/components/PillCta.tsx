@@ -23,9 +23,13 @@ const circleVariants = {
 };
 
 export default function PillCta({ href, children, variant = "light", className = "" }: PillCtaProps) {
+  const isExternal = href.startsWith("http");
+
   return (
     <Link
       href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={`pill-btn group ${variants[variant]} hover:opacity-85 ${className}`}
     >
       <span className="text-sm font-medium">{children}</span>

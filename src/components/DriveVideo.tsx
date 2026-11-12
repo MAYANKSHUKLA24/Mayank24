@@ -8,7 +8,7 @@ export default function DriveVideo({
   className?: string;
 }) {
   return (
-    <div className={`relative aspect-video w-full overflow-hidden rounded-xl bg-black ${className}`}>
+    <div className={`relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-black ${className}`}>
       <iframe
         src={`https://drive.google.com/file/d/${fileId}/preview`}
         title={title}

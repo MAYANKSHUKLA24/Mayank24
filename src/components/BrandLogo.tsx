@@ -6,6 +6,7 @@ import { buildLogoUrl } from "@/lib/logo";
 type BrandLogoProps = {
   name: string;
   domain?: string;
+  localSrc?: string;
   theme?: "light" | "dark";
   className?: string;
   imgClassName?: string;
@@ -14,11 +15,24 @@ type BrandLogoProps = {
 export default function BrandLogo({
   name,
   domain,
+  localSrc,
   theme = "light",
   className = "",
   imgClassName = "",
 }: BrandLogoProps) {
   const [stage, setStage] = useState<"primary" | "fallback" | "failed">("primary");
+
+  // Self-hosted logo takes priority: no third-party CDN dependency, no reliability issues.
+  if (localSrc) {
+    return (
+      <img
+        src={localSrc}
+        alt={name}
+        className={`h-full w-auto object-contain ${imgClassName}`}
+        loading="lazy"
+      />
+    );
+  }
 
   if (!domain || stage === "failed") {
     return (
